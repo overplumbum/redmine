@@ -187,3 +187,10 @@ fieldset[disabled] .btn-default.active {
   margin-right: 0;
   margin-left: 0;
 }
+
+
+.wtf {
+  float: right;
+  margin-top: 3.1em;
+  position: absolute;
+}

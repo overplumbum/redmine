@@ -4,12 +4,4 @@
 <%= watcher_link(@issue, User.current) %>
 <%= link_to l(:button_copy), project_copy_issue_path(@project, @issue), :class => 'icon icon-copy' if User.current.allowed_to?(:add_issues, @project) %>
 <%= link_to l(:button_delete), issue_path(@issue), :data => {:confirm => issues_destroy_confirmation_message(@issue)}, :method => :delete, :class => 'icon icon-del' if User.current.allowed_to?(:delete_issues, @project) %>
-
-<div class="btn-group-xs btn-group" style="margin-top:1em; display: block">
-<% if @issue.safe_attribute?('status_id') && @allowed_statuses.present? %>
-	<% @allowed_statuses.each do |t| %>
-		<button type="button" class="btn btn-default btn-xs wtf-status-btn <% if @issue.status_id == t.id %>disabled<% end %>" data-id="<%= t.id %>"><%= t.name %></button>
-	<% end %>
-<% end %>
-</div>
 </div>
